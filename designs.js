@@ -11,9 +11,14 @@ let submit = document.querySelector('input[type="submit"]');
 // When size is submitted by the user, call makeGrid()
 submit.addEventListener('click', makeGrid);
 
+
 function makeGrid() {
   // preventing the browser to refresh after clicking
   event.preventDefault();
+  //Before constructing a new grid, clear the existing table.
+  while (tbl.firstChild) {
+    tbl.removeChild(tbl.firstChild);
+}
   for (let i = 0; i < height.value; i++) {
     // creates a table row
     let row = document.createElement("tr");
