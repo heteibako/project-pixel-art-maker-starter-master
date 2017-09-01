@@ -26,12 +26,13 @@ function makeGrid() {
     function onClickHandler(e) {
       e.target.style.backgroundColor = colorPicker.value;
     }
-    row.addEventListener('click', onClickHandler);
+
 
     for (let j = 0; j < width.value; j++) {
       // Create a <td> element and put the <td> at
       // the end of the table row
       let cell = document.createElement("td");
+      cell.addEventListener('click', onClickHandler);
       row.appendChild(cell);
     }
     // add the row to the end of the table body
